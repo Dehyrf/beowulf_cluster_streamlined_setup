@@ -8,14 +8,15 @@ echo $MASK
 
 IP="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
-HOST==$(hostname)
+HOST=$(hostname)
 
-sudo touch ~/etc/network/interfaces 
+cd
+sudo touch /etc/network/interfaces 
 sudo echo "
 	iface eth0 inet static
      	address "$IP" 
      	netmask "$MASK"
-     	gateway "$GATEWAY"" >> ~/etc/network/interfaces
+     	gateway "$GATEWAY"" >> /etc/network/interfaces
 
 echo Finished, found $HOST for the hostname, found $IP for ip, $GATEWAY for the gateway, and $NETMASK for the netmask!
 echo
