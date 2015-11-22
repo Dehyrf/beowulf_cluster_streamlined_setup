@@ -15,7 +15,7 @@ HOST=$(hostname)
 cd
 sudo touch /etc/network/interfaces 
 sudo echo "
-	iface eth0 inet static
+iface eth0 inet static
      	address "$IP" 
      	netmask "$MASK"
      	gateway "$GATEWAY"" >> /etc/network/interfaces
