@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo Make sure you are connected to ethernet and are running this script as a super user!
+
 read -e -p "Enter the ip for the gateway: " -i "192.168.10.1" GATEWAY
 echo $GATEWAY
 
