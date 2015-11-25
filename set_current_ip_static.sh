@@ -15,13 +15,15 @@ IP="$(ifconfig $IFACE | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')"
 
 HOST=$(hostname)
 
-cd
-sudo touch /etc/network/interfaces 
 sudo echo "
 iface $IFACE inet static
      	address "$IP" 
      	netmask "$MASK"
      	gateway "$GATEWAY"" >> /etc/network/interfaces
 
+
+FINAL="$HOST $IP"
 echo Finished, found $HOST for the hostname, found $IP for ip, $GATEWAY for the gateway, and $NETMASK for the netmask!
+echo "$FINAL" >> node_list
+echo "$FINAL"
 echo
