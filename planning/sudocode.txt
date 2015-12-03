@@ -1,3 +1,4 @@
+https://hemprasad.wordpress.com/2014/12/25/building-a-beowulf-cluster-with-ubuntu/
 1) disable screen timeout with xset -dpms s off
 2) update and install build-essentials + openssh-serveri with apt-get --yes update
 3) make a user mpiuser and password
