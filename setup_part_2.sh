@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Makes file with only host names (to be used later)
-while read host _; do echo "$host" >> ./dependencies/hosts; done < ./dependencies/node_list
+while read host _; do echo "$host" >> ./dependencies/hosts; done < ./dependencies/node_list_reversed
 
 #Moves the host list with all of the other computers to the current machine
 sudo sed -i -e ./dependencies/node_list /etc/hosts
