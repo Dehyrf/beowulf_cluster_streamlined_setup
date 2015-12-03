@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Makes file with only host names (to be used later)
+while read host _; do echo "$host" >> ./dependencies/hosts; done < ./dependencies/node_list
+
 #Moves the host list with all of the other computers to the current machine
 sudo sed -i -e ./dependencies/node_list /etc/hosts
 
@@ -24,7 +27,7 @@ then
         ssh-copy-id localhost
         cd ~
         touch hosts
-        while read host _; do echo "$host" >> ./dependencies/hosts "$word"; done < ./dependencies/node_list
+        
 fi
 
 
