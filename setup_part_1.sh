@@ -7,7 +7,7 @@ bash ./dependencies/set_ip_volatile.sh
 #Updates and installs programs needed
 read -rsp $'Please connect to a network with internet access to download software (Note: this does not have to be your cluster network). Press any key to continue...\n' -n1 key
 sudo apt-get update
-sudo --yes install build-essentials openssh-server
+sudo --yes install build-essentials openssh-server nfs-kernel-server nfs-common
 sudo --yes apt-get autoremove && sudo apt-get --yes autoclean
 
 #Sets IP Static on the network and adds computer info to the node list file
