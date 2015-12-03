@@ -14,10 +14,9 @@ sudo --yes apt-get autoremove && sudo apt-get --yes autoclean
 read -rsp $'Now, plug in ethernet to your gateway for the cluster. Press any key to continue once it is connected...\n' -n1 key
 bash ./dependencies/set_current_ip_static.sh
 
-#Creates a dedicated user
-sudo useradd mpiuser sudo
+#Creates a dedicated user for the cluster, the accounts have no password (but you can change that if security is a issue with 'passwd mpiuser' on all nodes)
+sudo adduser mpiuser --uid 999
 echo Just made user: mpiuser
-sudo passwd mpiuser
 
 #Provides further instruction
 echo Now, please run the setup_part_1 script on all machines in the cluster. Once done, proceed to running setup_part_2 on the machines (but run it on the master node last).
