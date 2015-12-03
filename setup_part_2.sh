@@ -25,10 +25,20 @@ then
         echo When asked for a passphrase, leave it empty! 
         ssh-keygen
         ssh-copy-id localhost
-        cd ~
-        touch hosts
         
+        #Set up MPI and Hyrda
+        cp ./dependencies/hosts ~/hosts
+        cp ./dependencies/hosts ~/mpd.hosts
+        cp ./dependencies/hosts ~/.mpd.conf
+        chmod 600 ~/.mpd.conf
+        
+        #Set secret passphrase for the cluster
+        read -e -p "Enter the secret passphrase for the cluster: " -i "Pa$$w0rd" SECRET
+        echo "secretword="$SECRET"" >> ~/.mpd.conf
+        
+        #Now, to boot MPI on the nodes
+        read -e -p "Number of slave nodes in the cluster: " -i "3" NODES
+        mpdboot -n $NODES
+        echo Below are the working nodes ready to go!
+        mpdtrace -l
 fi
-
-
-
