@@ -21,10 +21,11 @@ iface $IFACE inet static
      	netmask "$MASK"
      	gateway "$GATEWAY"" >> /etc/network/interfaces
 
-FINALREVERSED="$HOST $IP"
 FINAL="$IP       $HOST"
 echo Finished, found $HOST for the hostname, found $IP for ip, $GATEWAY for the gateway, and $NETMASK for the netmask!
-echo "$FINALREVERSED" >> node_list_reversed
+#Populates file with only host names (to be used later)
+echo "$HOST" >> hosts
+#Populates the file for the complete node list 
 echo "$FINAL" >> node_list
 echo "$FINAL"
 echo
