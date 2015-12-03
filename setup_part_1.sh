@@ -20,4 +20,4 @@ echo Just made user: mpiuser
 sudo passwd mpiuser
 
 #Provides further instruction
-echo Now, please run the setup_part_1 script on all machines in the cluster. Once done, proceed to running setup_part_2 on the machines.
+echo Now, please run the setup_part_1 script on all machines in the cluster. Once done, proceed to running setup_part_2 on the machines (but run it on the master node last).
