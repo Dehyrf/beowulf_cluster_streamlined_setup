@@ -7,7 +7,7 @@ bash ./dependencies/set_ip_volatile.sh
 #Updates and installs programs needed
 read -rsp $'Please connect to a network with internet access to download software (Note: this does not have to be your cluster network). Press any key to continue...\n' -n1 key
 sudo apt-get update
-sudo --yes install build-essentials openssh-server nfs-kernel-server nfs-common
+sudo --yes install build-essentials openssh-server nfs-kernel-server nfs-common mpich2
 sudo --yes apt-get autoremove && sudo apt-get --yes autoclean
 
 #Sets IP Static on the network and adds computer info to the node list file
@@ -18,10 +18,6 @@ bash ./dependencies/set_current_ip_static.sh
 sudo useradd mpiuser sudo
 echo Just made user: mpiuser
 sudo passwd mpiuser
-
-#Log in as mpi user
-echo Please enter the password for mpiuser:
-su mpiuser
 
 #Provides further instruction
 echo Now, please run the setup_part_1 script on all machines in the cluster. Once done, proceed to running setup_part_2 on the machines.
