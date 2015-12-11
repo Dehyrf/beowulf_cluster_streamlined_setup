@@ -11,7 +11,7 @@ For this project's hardware, you will need a computer dedicated for use as a mas
 
 ## Installation
 
-To start it off, download or clone this repo and move/extract the contents of this repo to a flash drive. Then, proceed to run the setup_part_1.sh script on all cluster nodes using:
+To start it off, download or clone this repo and move/extract the contents of this repo to a flash drive. Then, disconnect the node from ethernet/internet and proceed to run the setup_part_1.sh script on all cluster nodes using:
 
       cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
       chmod +x setup_part_1.sh setup_part_2.sh #Makes the scripts executable
@@ -21,6 +21,10 @@ If this fails to run the scripts (like Xubuntu), run:
       
       cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
       bash setup_part_1.sh #Runs the first part of the setup
+      
+When prompted to connect the node to internet, connect it to a network with internet access, which dosen't have to be your cluster's network. Now, follow the on-screen instructions. When you see that you should connect the node to the cluster network, the ip is ready to be set static; connect the node to the cluster switch/router setup that will pass commands between the nodes so it can set up its static config. When prompted, enter the router's (gateway) ip and subnet mask. Once the setup is done, it will output the static settings. Check these are correct and then proceed to run the first part of the setup on all nodes. 
+
+
 
       
 
