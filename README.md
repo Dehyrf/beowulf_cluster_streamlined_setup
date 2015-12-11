@@ -12,12 +12,16 @@ For this project's hardware, you will need a computer dedicated for use as a mas
 ## Installation
 
 To start it off, download or clone this repo and move/extract the contents of this repo to a flash drive. Then, proceed to run the setup_part_1.sh script on all cluster nodes using:
-      'cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
+      '''
+      cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
       chmod +x setup_part_1.sh setup_part_2.sh #Makes the scripts executable
-      ./setup_part_1.sh #Runs the first part of the setup'
+      ./setup_part_1.sh #Runs the first part of the setup
+      '''
 If this fails to run the scripts (like Xubuntu), run:
+      '''
       cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
       bash setup_part_1.sh #Runs the first part of the setup
+      '''
       
 
 
