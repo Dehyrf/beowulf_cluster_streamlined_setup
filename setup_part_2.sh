@@ -4,7 +4,7 @@
 sudo sed -i -e ./dependencies/node_list /etc/hosts
 
 #Log in as mpi user
-echo Please enter the password for mpiuser:
+echo Please enter the password for mpiuser if one has been set:
 su mpiuser
 
 #Ask if master node, and if so, setup network fileshare using NFS
