@@ -11,7 +11,10 @@ su mpiuser
 read -p "Is this the master node?(Y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
-then
+then    
+        #Remove the NFS client from the master
+        sudo --yes apt-get remove nfs-common
+        
         #Share the home directory, restart the file server, and change firewall settings on the master node
         sudo echo "/home/mpiuser *(rw,sync,no_subtree_check)" >> /etc/exports
         sudo service nfs-kernel-server restart
