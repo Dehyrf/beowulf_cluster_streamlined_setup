@@ -7,28 +7,26 @@ This project was created to simplify the setting up of beowulf cluster computing
 
 ## Prerequisites
 
-For this project's hardware, you will need a computer dedicated for use as a master compute node, at least one slave node, a gateway (router), and an ethernet switch if you have enough nodes to fill up your router's ports and then some. For software, all nodes should be running linux, and more specifically, a debian based OS like Trisquel, Ubuntu, or Debian. For use with other distros, you may need to modify the script for the distro-specific commands. Finally, you will need a flash drive with the contents of this repository downloaded on it and temporary internet access at the beginning of the setup process. 
+For this project's hardware, you will need a computer dedicated for use as a master compute node, at least one slave node, a gateway (router), and an ethernet switch if you have enough nodes to fill up your router's ports and then some. For software, all nodes should be running linux, and more specifically, a debian-based OS like Trisquel, Ubuntu, or Debian. For use with other distros, you may need to modify the script for the distro-specific commands. Finally, you will need a flash drive with the contents of this repository downloaded on it and temporary internet access at the beginning of the setup process for each node. 
 
 ## Installation
 
-To start it off, download or clone this repo and move/extract the contents of this repo to a flash drive. Then, disconnect the node from ethernet/internet and proceed to run the setup_part_1.sh script on all cluster nodes using:
+To start it off, **download or clone this repo** and move/extract the contents of this repo **to a flash drive**. Then, **disconnect the node from ethernet/internet** and proceed to run the setup_part_1.sh script on all cluster nodes using:
 
-      cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
-      chmod +x setup_part_1.sh setup_part_2.sh #Makes the scripts executable
-      ./setup_part_1.sh #Runs the first part of the setup
+      cd *path_to_the_repository_folder_on_usb_drive*
+      bash setup_part_1.sh
       
-If this fails to run the scripts (like Xubuntu), run:
+**When prompted** to connect the node to internet, **connect it to a network with internet access**, which dosen't have to be your cluster's network. Now, follow the on-screen instructions. When you see that you should connect the node to the cluster network, the ip is ready to be set static; **connect the node to the cluster switch/router** setup that will pass commands between the nodes so it can set up its static config. When prompted, enter the router's (gateway) ip and subnet mask. Once the setup is done, it will output the static settings. **Check the settings are correct**. Next, the script will create a user, **mpiuser** for the ssh connection between machines. It will not show up on the login screen, but you can still use it via command line. By default, no password has been set, but you can set one with
+
+      passwd mpiuser
       
-      cd *path_to_the_repository_folder_on_usb_drive* #Change directory to the setup files
-      bash setup_part_1.sh #Runs the first part of the setup
+after the setup part 1 is done. If you do chose to add a password, use the same one on all nodes. To finish part one, make sure the setup has been run on **all nodes**. 
+
+For part two, run the setup part two on all nodes, but do it on the **master node last**. To start it, run:
+
+      bash setup_part_2.sh
       
-When prompted to connect the node to internet, connect it to a network with internet access, which dosen't have to be your cluster's network. Now, follow the on-screen instructions. When you see that you should connect the node to the cluster network, the ip is ready to be set static; connect the node to the cluster switch/router setup that will pass commands between the nodes so it can set up its static config. When prompted, enter the router's (gateway) ip and subnet mask. Once the setup is done, it will output the static settings. Check these are correct and then proceed to run the first part of the setup on all nodes. 
-
-
-
-      
-
-
+Then, enter the password for mpiuser if you made one.  
 
 ## Tests
 
