@@ -15,6 +15,8 @@ IP="$(ifconfig $IFACE | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')"
 
 HOST=$(hostname)
 
+sudo cp ./dependencies/interfaces /etc/network/interfaces
+
 sudo echo "
 iface $IFACE inet static
      	address "$IP" 

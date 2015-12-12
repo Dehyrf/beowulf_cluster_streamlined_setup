@@ -1,2 +1,5 @@
-sudo mv interfaces /etc/network/interfaces
-sudo cp /etc/network/interfaces interfaces
+sudo cp ./dependencies/interfaces /etc/network/interfaces
+
+sudo echo "
+# The primary network interface
+iface eth0 inet dhcp" >> /etc/network/interfaces

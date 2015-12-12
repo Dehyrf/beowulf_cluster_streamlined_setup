@@ -16,11 +16,11 @@ To start it off, **download or clone this repo** and move/extract the contents o
       cd *path_to_the_repository_folder_on_usb_drive*
       bash setup_part_1.sh
       
-**When prompted** to connect the node to internet, **connect it to a network with internet access**, which dosen't have to be your cluster's network. Now, follow the on-screen instructions. When you see that you should connect the node to the cluster network, the ip is ready to be set static; **connect the node to the cluster switch/router** setup that will pass commands between the nodes so it can set up its static config. When prompted, enter the router's (gateway) ip and subnet mask. Once the setup is done, it will output the static settings. **Check the settings are correct**. Next, the script will create a user, **mpiuser** for the ssh connection between machines. It will not show up on the login screen, but you can still use it via command line. By default, no password has been set, but you can set one with
+**When prompted** to connect the node to internet, **connect it to a network with internet access**, which dosen't have to be your cluster's network. Now, follow the on-screen instructions. When you see that you should connect the node to the cluster network, the ip is ready to be set static; **connect the node to the cluster switch/router** setup that will pass commands between the nodes so it can set up its static config. When prompted, enter the router's (gateway) ip and subnet mask. Once the setup is done, it will output the static settings. **Check the settings are correct**. Next, the script will create a user, **mpiuser** for the ssh connection between machines. It will not show up on the login screen, but you can still use it via command line. By default, no password has been set, but after setup part one is complete, you can set one with
 
       passwd mpiuser
       
-after the setup part 1 is done. If you do chose to add a password, use the same one on all nodes. To finish part one, make sure the setup has been run on **all nodes**. 
+If you do chose to add a password, use the same one on all nodes. To finish part one, make sure the setup has been run on **all nodes**. 
 
 For part two, run the setup part two on all nodes, but do it on the **master node last**. To start it, run:
 

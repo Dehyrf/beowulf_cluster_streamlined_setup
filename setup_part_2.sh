@@ -13,7 +13,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then    
         #Remove the NFS client from the master
-        sudo --yes apt-get remove nfs-common
+        sudo apt-get remove nfs-common
         
         #Share the home directory, restart the file server, and change firewall settings on the master node
         sudo echo "/home/mpiuser *(rw,sync,no_subtree_check)" >> /etc/exports

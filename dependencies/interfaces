@@ -1,2 +1,4 @@
-auto lo
+# The loopback network interface
+auto lo eth0
 iface lo inet loopback
+
