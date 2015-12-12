@@ -26,8 +26,8 @@ iface $IFACE inet static
 FINAL="$IP       $HOST"
 echo Finished, found $HOST for the hostname, found $IP for ip, $GATEWAY for the gateway, and $NETMASK for the netmask!
 #Populates file with only host names (to be used later)
-echo "$HOST" >> hosts
+echo "$HOST" >> ./dependencies/hosts
 #Populates the file for the complete node list 
-echo "$FINAL" >> node_list
+echo "$FINAL" >> ./dependencies/node_list
 echo "$FINAL"
 echo
