@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Moves the host list with all of the other computers to the current machine
-sudo sed -i -e ./dependencies/node_list /etc/hosts
+sudo cp ./dependencies/node_list /etc/hosts
 
 #Log in as mpi user
 echo Please enter the password for mpiuser if one has been set:
