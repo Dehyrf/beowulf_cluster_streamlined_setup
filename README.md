@@ -23,6 +23,8 @@ For part two, **run the setup part two on all nodes as mpiuser**, but do it on t
       $ sudo mpiuser
       $ bash setup_part_2.sh
       
+Now, follow the on-screen instructions and once at the master node, make sure to enter the same gateway ip as before for your cluster's router when prompted and make a passwordless ssh key (unless security is a concern). Finally, add a password to the cluster and make sure you write it down as it will be needed to run jobs on the cluster later. 
+
 ## Tests
 
 These setup scripts were tested on the following debian based systems: Trisquel 7.0, Raspbian, and Xubuntu.
