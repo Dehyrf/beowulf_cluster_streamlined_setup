@@ -1,13 +1,12 @@
 #!/bin/bash
 
+#Log in as mpi user
+read -rsp $'Please make sure you are running this as mpiuser. If not, please exit, and run the script as mpiuser. Press any key to continue...\n' -n1 key
+
 #Moves the host list with all of the other computers to the current machine
 sudo cp ./dependencies/node_list /etc/hosts
 
-#Log in as mpi user
-echo Please enter the password for mpiuser if one has been set:
-su mpiuser
-
-#Ask if master node, and if so, setup network fileshare using NFS
+#Ask if master node, and if so, setup network filesharing using NFS
 read -p "Is this the master node?(Y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -42,3 +41,5 @@ then
         echo Below are the working nodes ready to go!
         mpdtrace -l
 fi
+
+echo 'Setup is done!'
